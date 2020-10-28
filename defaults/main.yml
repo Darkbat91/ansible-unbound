@@ -31,4 +31,4 @@ enabled_dns:
 sinkhole_ads: true
 ad_blocklists:
   - name: yoyo_ads
-    uri: "http://pgl.yoyo.org/adservers/serverlist.php?hostformat=unbound&showintro=0&mimetype=plaintext" 
+    uri: "http://pgl.yoyo.org/adservers/serverlist.php?hostformat=unbound&showintro=0&mimetype=plaintext"
