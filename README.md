@@ -8,3 +8,6 @@ By default it package is installed to the default location. with the below featu
 
 - [Cloudflare](https://1.1.1.1/) and [Quad9](https://www.quad9.net/) as upstream resolvers
 - [Yoyo Block List](http://pgl.yoyo.org/adservers/serverlist.php) as the default ad block list
+
+## Changelog
+The [changelog](./CHANGELOG.md) is stored externally
