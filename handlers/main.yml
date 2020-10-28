@@ -1,6 +1,6 @@
 ---
 - name: Unbound | Handlers | Unbound vpns
   service:
-    name: "Unbound"
+    name: "unbound"
     state: restarted
   listen: restart_unbound
