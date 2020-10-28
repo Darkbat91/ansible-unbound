@@ -1,0 +1,44 @@
+---
+- name: Unbound | Install packages
+  package:
+    pkg:
+      - unbound
+    state: present
+    update_cache: true
+  become: true
+
+- name: Unbound | load config file
+  template:
+    src: etc_unbound_unbound.conf.j2
+    dest: "/etc/unbound/unbound.conf"
+    owner: root
+    group: root
+    mode: 0640
+  notify: restart_unbound
+
+- name: Unbound | Download root hints
+  get_url:
+    url: "{{ root_hint_url }}"
+    dest: "{{ root_hint_path }}"
+    owner: "root"
+    group: "unbound"
+    mode: 0640
+
+- name: Unbound | Download ad blocklist
+  get_url:
+    url: "{{ blocklist.uri }}"
+    dest: "/etc/unbound/{{ blocklist.name }}"
+    owner: "root"
+    group: "unbound"
+    mode: 0640
+  loop: "{{ ad_blocklists }}"
+  loop_control:
+    loop_var: blocklist
+    label: "{{ blocklist.name }}"
+  when: sinkhole_ads
+
+- name: Unbound | Ensure Unbound is started
+  service:
+    name: "unbound"
+    state: started
+    enabled: true
