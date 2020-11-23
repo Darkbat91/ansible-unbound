@@ -1,2 +1,16 @@
 ---
-# Just neceassary to install
+dependencies: []
+
+galaxy_info:
+  author: darkbat
+  description: Unbound Installer
+  license: "license (BSD, MIT)"
+  min_ansible_version: 2.1
+  platforms:
+    - name: EL
+      versions:
+        - 7
+  galaxy_tags:
+    - dns
+    - security
+    - config
