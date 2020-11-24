@@ -1,5 +1,5 @@
 ---
-- name: Unbound | Handlers | Unbound vpns
+- name: Unbound | Handlers | restart unbound
   service:
     name: "unbound"
     state: restarted
