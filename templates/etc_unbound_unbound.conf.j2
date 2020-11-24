@@ -183,6 +183,7 @@ server:
     #local-data: "nas.lan.     IN A 10.0.0.7"
 
     #local-data-ptr: "10.0.0.7  nas.lan"
+    include: "/etc/unbound/conf.d/*.conf"
 
 
     forward-zone:
