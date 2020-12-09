@@ -1,4 +1,1 @@
 ---
-- src: git+https://github.com/Darkbat91/openvpn
-  version: v1
-  name: openvpn
